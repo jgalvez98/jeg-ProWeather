@@ -1,33 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-     rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-     crossorigin="anonymous">
-     <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-    <header class="bg-primary bg-gradient d-flex align-items-center py-3 justify-content-center
+    <header class="d-flex align-items-center py-3 justify-content-center
      text-white">
         <h1>Weather Dashboard</h1>
     </header>
 
     <div class="row">
-        <div class="col-12 col-sm-2 border border-danger">
-        <h2 class="mx-2">Search for a city</h2>
-        <input type="text" class="form-control mx-3" aria-label="sizing example input"
-        aria-describedby="inputGroup-sizing-default">
+        <div class="col-12 col-sm-3 mx-3">
+            <h2 class="">Search for a city:</h2>
+            <input id="city-input" type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+            <button type="button" id="search-btn" class="btn btn-primary w-100 my-2">Search</button>
+            <hr>
+            <ul class="list-group">
+                <li class="list-group-item"><button type="button" class="btn btn-secondary w-100">Atlanta</button></li>
+                <li class="list-group-item"><button type="button" class="btn btn-secondary w-100">Denver</button></li>
+                <li class="list-group-item"><button type="button" class="btn btn-secondary w-100">Seattle</button></li>
+                <li class="list-group-item"><button type="button" class="btn btn-secondary w-100">San francisco</button>
+                </li>
+                <li class="list-group-item"><button type="button" class="btn btn-secondary w-100">Orlando</button></li>
+                <li class="list-group-item"><button type="button" class="btn btn-secondary w-100">New York</button></li>
+                <li class="list-group-item"><button type="button" class="btn btn-secondary w-100">Chicago</button></li>
+                <li class="list-group-item"><button type="button" class="btn btn-secondary w-100">Austin</button></li>
+            </ul>
+        </div>
+        <div class="col-12 col-sm-8">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 id="title">atlantic (07/24/2023)</h2>
+                    <p id="temp">temp: 76.6f</p>
+                    <p id="wind">wind: 8.43 MPH</p>
+                    <p id="humidity">humidity: 44%</p>
 
-         </div>
-        <div class="col-12 col-sm-10 border border-danger"></div>
+                </div>
+            </div>
+
+            <h3>5-Day forecast:</h3>
+
+            <div class="row">
+                <div class="col-sm-2 mb-3 mb-sm-0">
+                    <div class="card text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">07/26/2023</h5>
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">
+                            <p id="temp1">temp: 76.6f</p>
+                            <p id="wind1">wind: 8.43 MPH</p>
+                            <p id="humidity1">humidity: 44%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="card text-white ">
+                        <div class="card-body">
+                            <h5 class="card-title">07/26/2023</h5>
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">
+                            <p id="temp2">temp: 76.6f</p>
+                            <p id="wind2">wind: 8.43 MPH</p>
+                            <p id="humidity2">humidity: 44%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <div class="card text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">07/26/2023</h5>
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">
+                            <p id="temp3">temp: 76.6f</p>
+                            <p id="wind3">wind: 8.43 MPH</p>
+                            <p id="humidity3">humidity: 44%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <div class="card text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">07/26/2023</h5>
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">
+                            <p id="temp4">temp: 76.6f</p>
+                            <p id="wind4">wind: 8.43 MPH</p>
+                            <p id="humidity4">humidity: 44%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <div class="card text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">07/26/2023</h5>
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">
+                            <p id="temp5">temp: 76.6f</p>
+                            <p id="wind5">wind: 8.43 MPH</p>
+                            <p id="humidity5">humidity: 44%</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
     </div>
-    
 
 
- <script src="./assets/js/script.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
