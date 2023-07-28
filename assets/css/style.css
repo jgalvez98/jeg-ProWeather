@@ -1,7 +1,43 @@
-header {
-    background: linear-gradient(70deg, rgb(78, 78, 249), rgb(26, 23, 203))
+h1 {
+    background: linear-gradient(70deg, rgb(78, 78, 249), rgb(26, 23, 203));
+	text-align: center;
+    color: white;
+}
+label {
+	margin-top: 10px;
+	font-weight: bold;
+	font-size: 20px;
+}
+.card {
+	margin: 10px;
+}
+.colOne, .colTwo {
+	background-color: white;
+}
+.histBtnRow {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.icons {
+	height: 60px;
+	width: 60px;
+}
+.cardTodayDate {
+	font-size: 16px;
 }
 
-.card {
-    background-color: rgb(13, 13, 53);
+.card-body, .card-header {
+	background-color: rgb(13, 13, 53);
+}
+
+.card-body.cardBodyToday {
+	background-color: white;
+}
+
+.card-header.cardTodayDate {
+	background-color: white;
+}
+
+.card-header.cardTodayCityName {
+		background-color: white;
 }
