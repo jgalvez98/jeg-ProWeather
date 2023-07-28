@@ -1,15 +1,17 @@
 h1 {
-    background: linear-gradient(70deg, rgb(78, 78, 249), rgb(26, 23, 203));
+    background: linear-gradient(70deg, rgb(54, 54, 244), rgb(8, 6, 113));
 	text-align: center;
     color: white;
+	padding-bottom: 8px;
 }
 label {
 	margin-top: 10px;
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 30px;
 }
 .card {
 	margin: 10px;
+	
 }
 .colOne, .colTwo {
 	background-color: white;
@@ -19,8 +21,8 @@ label {
 	margin-bottom: 5px;
 }
 .icons {
-	height: 60px;
-	width: 60px;
+	height: 50px;
+	width: 50px;
 }
 .cardTodayDate {
 	font-size: 16px;
@@ -29,7 +31,7 @@ label {
 .card-body, .card-header {
 	background-color: rgb(13, 13, 53);
 }
-
+ 
 .card-body.cardBodyToday {
 	background-color: white;
 }
@@ -40,4 +42,14 @@ label {
 
 .card-header.cardTodayCityName {
 		background-color: white;
+}
+
+#button-addon2 {
+ background: linear-gradient(70deg, rgb(78, 78, 249), rgb(26, 23, 203));
+
+}
+
+.h2{
+ text-align: left;
+ font-size: 20px;
 }

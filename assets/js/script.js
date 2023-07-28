@@ -2,7 +2,7 @@ var key = "26b8767a0c9a67d5cba18ad715da7418";
 var city = "miami"
 
 //Grabs the current time and date
-var date = moment().format('dddd, MMMM Do YYYY');
+var date = moment().format('DD/MM/YYYY');
 var dateTime = moment().format('YYYY-MM-DD HH:MM:SS')
 
 var cityHist = [];
@@ -40,7 +40,7 @@ function getHistory() {
 	} if (!city) {
 		return;
 	}
-	//Allows the buttons to start a search as well
+	//Allows the buttons to start a search //
 	$('.histBtn').on("click", function (event) {
 		event.preventDefault();
 		city = $(this).text();
@@ -49,9 +49,9 @@ function getHistory() {
 	});
 };
 
-//Grab the main 'Today' card body.
+// today card body //
 var cardTodayBody = $('.cardBodyToday')
-//Applies the weather data to the today card and then launches the five day forecast
+//Applies the weather data to the today card and then launches the five day forecast //
 function getWeatherToday() {
 	var getUrlCurrent = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`;
 
@@ -63,20 +63,17 @@ function getWeatherToday() {
 	}).then(function (response) {
 		$('.cardTodayCityName').text(response.name);
 		$('.cardTodayDate').text(date);
-		//Icons
+		//Icons //
 		$('.icons').attr('src', `https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`);
-		// Temperature
-		var pEl = $('<p>').text(`Temperature: ${response.main.temp} °F`);
+		// Temperature //
+		var pEl = $('<p>').text(`Temp: ${response.main.temp} °F`);
 		cardTodayBody.append(pEl);
-		//Feels Like
-		var pElTemp = $('<p>').text(`Feels Like: ${response.main.feels_like} °F`);
-		cardTodayBody.append(pElTemp);
-		//Humidity
+		//Wind Speed //
+		var pElWind = $('<p>').text(`Wind: ${response.wind.speed} MPH`);
+		cardTodayBody.append(pElWind);
+		//Humidity //
 		var pElHumid = $('<p>').text(`Humidity: ${response.main.humidity} %`);
 		cardTodayBody.append(pElHumid);
-		//Wind Speed
-		var pElWind = $('<p>').text(`Wind Speed: ${response.wind.speed} MPH`);
-		cardTodayBody.append(pElWind);
 		//Set the lat and long from the searched city
 		var cityLon = response.coord.lon;
 		// console.log(cityLon);
@@ -90,7 +87,7 @@ var fiveForecastEl = $('.fiveForecast');
 
 function getFiveDayForecast() {
 	var getUrlFiveDay = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${key}`;
-
+	                    
 	$.ajax({
 		url: getUrlFiveDay,
 		method: 'GET',
@@ -112,17 +109,17 @@ function getFiveDayForecast() {
 				myWeather.push(testObj);
 			}
 		})
-		//Inject the cards to the screen 
+		//cards to the screen //
 		for (let i = 0; i < myWeather.length; i++) {
 
 			var divElCard = $('<div>');
-			divElCard.attr('class', 'card text-white bg-primary mb-3 cardOne');
+			divElCard.attr('class', 'card text-white mb-3 cardOne');
 			divElCard.attr('style', 'max-width: 200px;');
 			fiveForecastEl.append(divElCard);
 
 			var divElHeader = $('<div>');
 			divElHeader.attr('class', 'card-header')
-			var m = moment(`${myWeather[i].date}`).format('MM-DD-YYYY');
+			var m = moment(`${myWeather[i].date}`).format('MM/DD/YYYY');
 			divElHeader.text(m);
 			divElCard.append(divElHeader)
 
@@ -138,9 +135,9 @@ function getFiveDayForecast() {
 			//Temp
 			var pElTemp = $('<p>').text(`Temperature: ${myWeather[i].temp} °F`);
 			divElBody.append(pElTemp);
-			//Feels Like
-			var pElFeel = $('<p>').text(`Feels Like: ${myWeather[i].feels_like} °F`);
-			divElBody.append(pElFeel);
+			//Wind Speed
+			var pElWind = $('<p>').text(`Wind: ${myWeather[i].speed} MPH`);
+			divElBody.append(pElWind);
 			//Humidity
 			var pElHumid = $('<p>').text(`Humidity: ${myWeather[i].humidity} %`);
 			divElBody.append(pElHumid);
