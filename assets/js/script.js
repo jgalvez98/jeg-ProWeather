@@ -74,11 +74,6 @@ function getWeatherToday() {
 		//Humidity //
 		var pElHumid = $('<p>').text(`Humidity: ${response.main.humidity} %`);
 		cardTodayBody.append(pElHumid);
-		//Set the lat and long from the searched city
-		var cityLon = response.coord.lon;
-		// console.log(cityLon);
-		var cityLat = response.coord.lat;
-		// console.log(cityLat);
 	});
 	getFiveDayForecast();
 };
@@ -132,20 +127,20 @@ function getFiveDayForecast() {
 			divElIcon.attr('src', `https://openweathermap.org/img/wn/${myWeather[i].icon}@2x.png`);
 			divElBody.append(divElIcon);
 
-			//Temp
+			//Temp //
 			var pElTemp = $('<p>').text(`Temperature: ${myWeather[i].temp} °F`);
 			divElBody.append(pElTemp);
-			//Wind Speed
+			//Wind Speed //
 			var pElWind = $('<p>').text(`Wind: ${myWeather[i].speed} MPH`);
 			divElBody.append(pElWind);
-			//Humidity
+			//Humidity //
 			var pElHumid = $('<p>').text(`Humidity: ${myWeather[i].humidity} %`);
 			divElBody.append(pElHumid);
 		}
 	});
 };
 
-//Allows for the example data to load for miami
+//Allows example data to load for miami //
 function initLoad() {
 
 	var cityHistStore = JSON.parse(localStorage.getItem('city'));
